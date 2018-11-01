@@ -122,19 +122,17 @@
 
         public int getValue()
         {
-            return 0;
-            // return value;
+            return value;
         }
 
         public ArrayList<Tree> getChildren()
         {
-            return new ArrayList<>();
-            //return children;
+            return children;
         }
 
         public void add(Tree child)
         {
-            //children.add(child);
+            children.add(child);
         }
     }
 
@@ -148,7 +146,7 @@
      * For example, for an n (called the branching factor here) of 4 and a height of 3, the tree at the first
      * level has 1 node. At the next level, it has 4 nodes, as the root has 4 children. The next level
      * has 16 nodes, because each of the 4 children of the root have 4 children. The size of the tree
-     * is then 1 + 4 + 16 = 21.
+     * is then 1 + 4 + 16 = 21
      * 
      * Keep in mind that this should be a recursive function and that each subtree of a tree is also a tree.
      * I.e. you can call this function on any part of a larger tree to get the size of that sub-part.
@@ -163,11 +161,12 @@
     {
         if (height == 1)
         {
-            //TODO
+            return 1;
         }
-        //TODO
-
-        return 0;
+        else
+        {
+            return nnaryTreeSize(branchingFactor, height - 1);
+        }
     }
 
     /**
@@ -180,7 +179,7 @@
      */
     public int treeSum(Tree tree)
     {
-        //TODO
+        
         return 0;
     }
 
