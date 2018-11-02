@@ -112,7 +112,7 @@
 
     protected final class Tree
     {
-        private ArrayList<Tree> children;
+        private ArrayList<Tree> children = new ArrayList<>();
         private int value;
 
         public Tree(int value)
@@ -132,7 +132,7 @@
 
         public void add(Tree child)
         {
-            //children.add(child);
+            children.add(child);
         }
     }
 
@@ -185,14 +185,13 @@
     public int treeSum(Tree tree)
     {
         
-        int sum = 0;
-        /*
-        for (Tree children : tree.getChildren())
-        {
-            sum += treeSum(children);
-        }
-        */
-        return 0;
+        int sum = tree.getValue();
+            for (Tree children : tree.getChildren())
+            {
+                sum += treeSum(children);
+            }
+
+        return sum;
     }
 
     /**
